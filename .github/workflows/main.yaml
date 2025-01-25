@@ -73,6 +73,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Prune Docker to Free Disk Space
+        run: docker system prune --all --force --volumes
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
